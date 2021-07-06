@@ -17,14 +17,34 @@ class Server {
         // Http server
         this.server = http.createServer( this.app );
         
-        // Configuraciones de sockets
-        this.io = socketio( this.server, { /* configuraciones */ } );
-
+        
+    
         // Inicializar sockets
         this.sockets = new Sockets( this.io );
     }
 
     middlewares() {
+
+
+        this.io = socketio( this.server, {
+     
+            cors: {
+                origin: "https://localhost:8080",
+                methods: ["GET", "POST"],
+                allowedHeaders: ["my-custom-header"],
+                credentials: true,
+                transport : ['websocket','polling', 'flashsocket' ]
+              }
+             /* configuraciones */ } );
+
+
+
+
+
+
+
+
+
         // Desplegar el directorio público
         this.app.use( express.static( path.resolve( __dirname, '../public' ) ) );
 
