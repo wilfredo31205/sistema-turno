@@ -39,7 +39,7 @@ class Server {
          
         cors: {
            
-            origin: "*",
+            origin: RECT_APP_FRONTEND,
              allowEIO3: true,
             methods: ["GET", "POST"],
             transport : ['websocket','polling', 'flashsocket' ]
