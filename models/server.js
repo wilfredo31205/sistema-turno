@@ -16,15 +16,7 @@ class Server {
 
         // Http server
         this.server = http.createServer( this.app );
-        
-        // Configuraciones de sockets
-        this.io = socketio( this.server, {
-            
-            https:sistemsa-turno.netlify.app/escritorio
-        
-        
-        
-        } );
+    
 
         // Inicializar sockets
         this.sockets = new Sockets( this.io );
@@ -36,6 +28,38 @@ class Server {
 
         // Configurar cors
         this.app.use( cors() );
+
+
+
+
+
+        
+     // Configuraciones de sockets
+     this.io = socketio( this.server, {
+         
+        cors: {
+           
+            origin: "*",
+            transport : ['websocket','polling', 'flashsocket' ]
+           
+           
+
+  
+          }
+         
+})
+  
+
+  
+
+
+
+
+
+
+
+
+
 
         // Get de los últimos tickets
         this.app.get('/ultimos', (req, res) => {
