@@ -40,7 +40,7 @@ class Server {
         cors: {
            
             origin: "*",
-             allowEIO3: false,
+             allowEIO3: true,
             methods: ["GET", "POST"],
             transport : ['websocket','polling', 'flashsocket' ]
            
