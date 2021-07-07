@@ -18,7 +18,29 @@ class Server {
         this.server = http.createServer( this.app );
         
         // Configuraciones de sockets
-        this.io = socketio( this.server, { /* configuraciones */ } );
+        this.io = socketio( this.server, { 
+            
+            
+            
+            cors: {
+                origin: "https://localhost:8080",
+                methods: ["GET", "POST"],
+                allowedHeaders: ["my-custom-header"],
+                credentials: true,
+                transport : ['websocket','polling', 'flashsocket' ]
+              }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            /* configuraciones */ } );
 
         // Inicializar sockets
         this.sockets = new Sockets( this.io );
