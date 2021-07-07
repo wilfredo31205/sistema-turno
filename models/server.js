@@ -42,7 +42,7 @@ class Server {
             origin: "*",
 
             //origin: RECT_APP_FRONTEND,
-             allowEIO3: true,
+             allowEIO3: false,
             methods: ["GET", "POST"],
             transport : ['websocket','polling', 'flashsocket' ]
            
