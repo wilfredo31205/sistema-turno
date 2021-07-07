@@ -39,7 +39,8 @@ class Server {
          
         cors: {
            
-            origin: "*",
+            origin: "https://sistemsa-turno.netlify.app/escritorio",
+            methods: ["GET", "POST"],
             transport : ['websocket','polling', 'flashsocket' ]
            
            
