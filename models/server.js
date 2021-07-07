@@ -39,7 +39,7 @@ class Server {
          
         cors: {
            
-            origin: "http://localhost:3000",
+            origin: "*",
             transport : ['websocket','polling', 'flashsocket' ]
            
            
