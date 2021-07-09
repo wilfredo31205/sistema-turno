@@ -39,7 +39,8 @@ class Server {
          
         cors: {
            
-            origin: "*",
+            origin: "https://sistemsa-turno.netlify.app/escritorio",
+            credentials: true,
 
             //origin: RECT_APP_FRONTEND,
              allowEIO3: false,
